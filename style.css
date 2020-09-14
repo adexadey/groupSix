@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #091f36;
+    color: azure;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+   }
+.header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search{
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 5px dotted green;
+}
+.search :focus{
+    outline: none;
+}
