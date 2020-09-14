@@ -1,6 +1,10 @@
 let main = document.querySelector(".main-list")
 let form = document.querySelector("form");
-let newArr = []
+
+let newArr= JSON.parse(localStorage.getItem("newArr"))
+if(newArr){
+    displayDatas(newArr)
+}
 
 form.addEventListener("submit", handleForm)
 function handleForm(e){
@@ -42,4 +46,39 @@ function displayDatas(newArr){
 
         main.appendChild(movieEl)
     })
+    saveJson()
+}
+
+function saveJson(){
+    localStorage.setItem("newArr", JSON.stringify(newArr))
+}
+
+let obj={}
+
+function details(){
+    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=97022c83")
+    .then((res)=>res.json())
+    .then((data)=>{
+        obj.title = data.Title;
+        obj.img = data.Poster;
+    })
+    .then(function(){
+        displayMovies()
+    })
+
+}
+
+details()
+
+
+
+function displayMovies(){
+    let main = document.querySelector("main");
+    let newDiv = document.createElement("div");
+
+    newDiv.innerHTML = `
+    <img src ="${obj.img}" alt="poster">`
+
+    main.appendChild(newDiv);
+
 }

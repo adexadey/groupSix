@@ -26,3 +26,18 @@ body{
 .search :focus{
     outline: none;
 }
+.main-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+img{
+    margin-bottom: 0;
+}
+
+.card{
+    margin: 1rem;
+    text-align: center;
+    width: 300px;
+}
