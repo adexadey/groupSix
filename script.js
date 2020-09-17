@@ -16,20 +16,18 @@ function handleForm(e){
     input.value = ""
 }
 
-
 function searchFor(name){
-    let newList =  document.createElement("div");
     fetch(`http://www.omdbapi.com/?s=${name}&apikey=97022c83`)
     .then((response)=>response.json())
     .then((data)=>{
         console.log(data)
         newArr = data.Search
+        console.log(typeof newArr)
     })
     .then(function(){
         displayDatas(newArr)
     })
 }
-
 
 function displayDatas(newArr){
     main.innerHTML="";
@@ -41,8 +39,8 @@ function displayDatas(newArr){
 
         movieEl.innerHTML = `<div>
         <img src="${Poster}" alt="${Title}"/>
-        <P class="text-center">${Title}</p>
-        <p class="text-center">${Year}</p></div>`;
+        <P class="text-title">${Title}</p>
+        <p class="text-year">${Year}</p></div>`;
 
         main.appendChild(movieEl)
     })
@@ -53,6 +51,8 @@ function saveJson(){
     localStorage.setItem("newArr", JSON.stringify(newArr))
 }
 
+/*
+//default search
 let obj={}
 
 function details(){
@@ -65,12 +65,9 @@ function details(){
     .then(function(){
         displayMovies()
     })
-
 }
 
 details()
-
-
 
 function displayMovies(){
     let main = document.querySelector("main");
@@ -80,5 +77,5 @@ function displayMovies(){
     <img src ="${obj.img}" alt="poster">`
 
     main.appendChild(newDiv);
-
 }
+*/

@@ -3,41 +3,118 @@
 }
 
 body{
-    background-color: #091f36;
-    color: azure;
+   
+    background: #5ba4f3;
+    color:  azure;
+    padding-bottom: 50px;
+    font-weight: bolder;
+    color: brown;
 }
+
 .container{
-    width: 80%;
-    margin: auto;
-    margin-top: 80px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-radius: 20px;
+    height:100%;
    }
-.header{
+   .header{
+    padding:0 5px;
+    background-color: rgb(88, 86, 86);
+    color: cornsilk;
+    border-radius: 10px;
+    align-items: center;
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .search{
     padding: 0.5rem 1rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     border-radius: 20px;
-    background-color: transparent;
-    border: 5px dotted green;
+    background: rgb(207, 230, 207);
+  
 }
-.search :focus{
-    outline: none;
-}
+
 .main-list{
+    border-radius: 10px;
+    width: 97%;
+    margin: 10px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-img{
-    margin-bottom: 0;
+    justify-content: space-around;
 }
 
 .card{
-    margin: 1rem;
+    background-color: #b07c9e;
+    background: white;
+    border-radius: 20px;
+    margin: 0.5rem;
     text-align: center;
-    width: 300px;
+    color: rgb(34, 6, 53);
+    font-weight: bolder;
+    display: flex column wrap;
+}
+
+img{
+    border-radius: 20px 20px 0 0;
+}
+
+.text-title, .text-year{
+    margin-top: 5px;
+    margin-top:0 ;
+}
+
+
+
+@media(max-width:450px){
+    body{
+        background: #5ba4f3;
+        font-weight: bolder;
+    }
+    .header{
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        top: 0;  
+    }
+   
+    .search{
+        margin-bottom: 16px;
+        font-size: 18px;
+        width: 100%;
+        background-color: #eaf5e5;
+    }
+    .main-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+    }
+
+    .card{
+        background-color:#f1f4f8;
+        border-radius: 10px;
+        margin: 0.5rem;
+        text-align: center;
+        width: 28%; 
+    }
+    
+    img{
+        border-radius: 10px;
+        width: 100%;
+    }
+    
+    .text-title, .text-year{
+        color: rgb(34, 6, 53);
+        margin:5px 0 ;
+
+    }
+    
+   
 }
