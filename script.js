@@ -12,19 +12,30 @@ function handleForm(e){
     searchFor(input.value)
     input.value = ""
 }
+function searchFor(name){
+    let newList =  document.createElement("div");
+    fetch(`https://www.omdbapi.com/?s=${name}&apikey=97022c83`)
+    .then((response)=>response.json())
+    .then((data)=>{
+        console.log(data)
+        newArr = data.Search
+    })
+    .then(function(){
+        displayDatas(newArr)
+    })
+}
 
+/*
  async function searchFor(name){
     let response =  await fetch(`https://www.omdbapi.com/?s=${name}&apikey=97022c83`)
     //fetch('https://www.omdbapi.com/?apikey=97022c83&s='+ name)
     let responseData = await response.json()
-    
+
     let newArr = await responseData.Search
-    console.log(responseData.Search)
-    console.log(newArr)
-
+    
     displayDatas(newArr)
-
 }
+*/
 
 function displayDatas(newArr){
     main.innerHTML="";
