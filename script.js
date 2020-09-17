@@ -14,7 +14,7 @@ function handleForm(e){
 }
 
  async function searchFor(name){
-    let response =  await fetch(`http://www.omdbapi.com/?s=${name}&apikey=97022c83`)
+    let response =  await fetch(`https://www.omdbapi.com/?s=${name}&apikey=97022c83`)
     //fetch('https://www.omdbapi.com/?apikey=97022c83&s='+ name)
     let responseData = await response.json()
     
