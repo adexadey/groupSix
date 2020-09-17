@@ -29,17 +29,7 @@ function searchFor(name){
     })
 }
 
-/*
- async function searchFor(name){
-    let response =  await fetch(`https://www.omdbapi.com/?s=${name}&apikey=97022c83`)
-    //fetch('https://www.omdbapi.com/?apikey=97022c83&s='+ name)
-    let responseData = await response.json()
 
-    let newArr = await responseData.Search
-    
-    displayDatas(newArr)
-}
-*/
 
 function displayDatas(newArr){
     main.innerHTML="";
@@ -56,36 +46,5 @@ function displayDatas(newArr){
 
         main.appendChild(movieEl)
     })
-    localStorage.setItem("newArr", JSON.stringify(newArr))
-    
+    localStorage.setItem("newArr", JSON.stringify(newArr))   
 }
-
-
-/*
-//default search
-let obj={}
-
-function details(){
-    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=97022c83")
-    .then((res)=>res.json())
-    .then((data)=>{
-        obj.title = data.Title;
-        obj.img = data.Poster;
-    })
-    .then(function(){
-        displayMovies()
-    })
-}
-
-details()
-
-function displayMovies(){
-    let main = document.querySelector("main");
-    let newDiv = document.createElement("div");
-
-    newDiv.innerHTML = `
-    <img src ="${obj.img}" alt="poster">`
-
-    main.appendChild(newDiv);
-}
-*/
