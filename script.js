@@ -1,10 +1,7 @@
 let main = document.querySelector(".main-list")
 let form = document.querySelector("form");
+let newArr = [];
 
-let newArr= JSON.parse(localStorage.getItem("newArr"))
-if(newArr){
-    displayDatas(newArr)
-}
 
 form.addEventListener("submit", handleForm)
 function handleForm(e){
@@ -16,18 +13,17 @@ function handleForm(e){
     input.value = ""
 }
 
-function searchFor(name){
-    fetch('https://www.omdbapi.com/?apikey=97022c83&s='+ name)
-    .then((response)=>response.json())
-    .then((data)=>{
-        console.log(data)
-        newArr = data.Search
-        console.log(typeof newArr)
-        displayDatas(newArr)
-    })
-    .catch(function(error){
-        console.log(error)
-    })
+ async function searchFor(name){
+    let response =  await fetch(`http://www.omdbapi.com/?s=${name}&apikey=97022c83`)
+    //fetch('https://www.omdbapi.com/?apikey=97022c83&s='+ name)
+    let responseData = await response.json()
+    
+    let newArr = await responseData.Search
+    console.log(responseData.Search)
+    console.log(newArr)
+
+    displayDatas(newArr)
+
 }
 
 function displayDatas(newArr){
@@ -45,12 +41,9 @@ function displayDatas(newArr){
 
         main.appendChild(movieEl)
     })
-    saveJson()
+    
 }
 
-function saveJson(){
-    localStorage.setItem("newArr", JSON.stringify(newArr))
-}
 
 /*
 //default search
