@@ -18,5 +18,3 @@ Step 5: Defining the displayDatas(newArr),
 
 Step 6: Use localstorage to set the item in json form & parse it back above. line 50-52 & line 4-7.
 
-Step 7: Giving the page a default movie page
-with details().

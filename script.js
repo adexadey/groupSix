@@ -12,7 +12,6 @@ function handleForm(e){
     e.preventDefault();
     let input = document.querySelector("input")
     if(input.value != "")
-    console.log(input.value)
     searchFor(input.value)
     input.value = ""
 }
@@ -21,7 +20,6 @@ function searchFor(name){
     fetch(`https://www.omdbapi.com/?s=${name}&apikey=97022c83`)
     .then((response)=>response.json())
     .then((data)=>{
-        console.log(data)
         newArr = data.Search
     })
     .then(function(){

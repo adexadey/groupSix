@@ -8,7 +8,6 @@ body{
     color:  azure;
     padding-bottom: 50px;
     font-weight: bolder;
-    color: brown;
 }
 
 .container{
@@ -28,7 +27,19 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: 20px;
+}
+
+form{
+    padding-right: 15px;
+}
+.submit{
+    padding: 0.5rem 1rem;
+    font-size: 1.7rem;
+    border-radius: 20px;
+    color: rgb(88, 86, 86);
+    margin-bottom: 15px;
+    background: cornsilk;
 }
 
 .search{
@@ -37,8 +48,8 @@ body{
     border-radius: 20px;
     background: rgb(207, 230, 207);
     margin-bottom: 15px;
-  
 }
+
 
 .main-list{
     border-radius: 10px;
@@ -77,20 +88,41 @@ img{
         background: #5ba4f3;
         font-weight: bolder;
     }
+
     .header{
         background: transparent;
         display: flex;
         flex-direction: column;
         margin: 0;
         width: 100%;
-        top: 0;  
+        top: 0; 
     }
+
+    h1{
+        color: black;
+        text-align: center;
+    }
+
+    form{
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
    
     .search{
         margin-bottom: 16px;
         font-size: 18px;
         width: 100%;
         background-color: #eaf5e5;
+    }
+    .submit{
+        color: bisque;
+        background-color: rgb(88, 86, 86);
+        font-size: 18px;
+        width: 100%;
     }
     .main-list{
         display: flex;
@@ -117,6 +149,5 @@ img{
         margin:5px 0 ;
 
     }
-    
-   
+ 
 }
