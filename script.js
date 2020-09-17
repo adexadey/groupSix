@@ -2,6 +2,10 @@ let main = document.querySelector(".main-list")
 let form = document.querySelector("form");
 let newArr = [];
 
+let arr = JSON.parse(localStorage.getItem("newArr"))
+if(arr){
+    displayDatas(arr)
+}
 
 form.addEventListener("submit", handleForm)
 function handleForm(e){
@@ -52,6 +56,7 @@ function displayDatas(newArr){
 
         main.appendChild(movieEl)
     })
+    localStorage.setItem("newArr", JSON.stringify(newArr))
     
 }
 
