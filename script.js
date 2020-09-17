@@ -25,9 +25,10 @@ function searchFor(name){
         console.log(data)
         newArr = data.Search
         console.log(typeof newArr)
-    })
-    .then(function(){
         displayDatas(newArr)
+    })
+    .catch(function(error){
+        console.log(error)
     })
 }
 
