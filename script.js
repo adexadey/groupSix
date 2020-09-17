@@ -17,7 +17,9 @@ function handleForm(e){
 }
 
 function searchFor(name){
-    fetch('http://www.omdbapi.com/?apikey=97022c83&s='+ name)
+    fetch('http://www.omdbapi.com/?apikey=97022c83&s='+ name,{
+        method: "get"
+    })
     .then((response)=>response.json())
     .then((data)=>{
         console.log(data)
